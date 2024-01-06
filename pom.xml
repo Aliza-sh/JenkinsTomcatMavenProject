@@ -1,5 +1,5 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.example</groupId>
   <artifactId>java-tomcat-sample</artifactId>
@@ -7,6 +7,12 @@
   <version>2.0.0</version>
   <name>hello Maven Webapp</name>
   <url>http://maven.apache.org</url>
+
+  <properties>
+    <maven.compiler.source>1.8</maven.compiler.source>
+    <maven.compiler.target>1.8</maven.compiler.target>
+  </properties>
+
   <dependencies>
     <dependency>
       <groupId>junit</groupId>
@@ -15,35 +21,34 @@
       <scope>test</scope>
     </dependency>
   </dependencies>
+
   <build>
+    <finalName>java-tomcat-maven-example</finalName>
     <plugins>
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-war-plugin</artifactId>
-        <version>3.3.2</version>
-        <configuration>
-          <warSourceDirectory>${project.build.directory}/${project.build.finalName}</warSourceDirectory>
-          <webappDirectory>${project.build.directory}/${project.build.finalName}</webappDirectory>
-          <archive>
-            <manifestEntries>
-              <Build-Date>${maven.build.timestamp}</Build-Date>
-              <Build-Number>${buildNumber}</Build-Number>
-              <Build-Jdk>${maven.version}</Build-Jdk>
-              <Build-By>${user.name}</Build-By>
-            </manifestEntries>
-          </archive>
-        </configuration>
+        <artifactId>maven-dependency-plugin</artifactId>
+        <version>3.1.2</version>
         <executions>
           <execution>
             <id>copy</id>
-            <phase>install</phase>
+            <phase>package</phase>
             <goals>
               <goal>copy</goal>
             </goals>
+            <configuration>
+              <artifactItems>
+                <artifactItem>
+                  <groupId>com.github.jsimone</groupId>
+                  <artifactId>webapp-runner</artifactId>
+                  <version>8.5.11.3</version>
+                  <destFileName>webapp-runner.jar</destFileName>
+                </artifactItem>
+              </artifactItems>
+            </configuration>
           </execution>
         </executions>
       </plugin>
     </plugins>
   </build>
-
 </project>
