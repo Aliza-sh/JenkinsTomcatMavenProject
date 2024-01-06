@@ -31,3 +31,46 @@ pipeline {
         
     }
 }
+
+
+pipeline {
+    agent any
+    environment {
+    // Set the JAVA_HOME environment variable
+           JAVA_HOME = '/usr/lib/jvm/default-java'
+     }
+stages {
+stage('Checkout') {
+steps {
+// Checkout the repository
+git 'https://github.com/Aliza-sh/TomcatProject'
+}
+}
+stage('Test') {
+steps {
+sh 'mvn test'
+
+}
+}
+stage('Build ') {
+steps {
+sh 'mvn clean package'
+
+}
+}
+stage('Package') {
+steps {
+sh 'mvn package'
+}
+}
+
+    stage('Deploy to Tomcat') {
+        steps {
+            sh 'cp target/your-project.war $CATALINA_HOME/webapps/'
+            sh '$CATALINA_HOME/bin/catalina.sh run'
+        }
+    }
+}
+
+
+}
