@@ -16,29 +16,34 @@
     </dependency>
   </dependencies>
   <build>
-    <finalName>java-tomcat-maven-example</finalName>
     <plugins>
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-war-plugin</artifactId>
         <version>3.3.2</version>
+        <configuration>
+          <warSourceDirectory>${project.build.directory}/${project.build.finalName}</warSourceDirectory>
+          <webappDirectory>${project.build.directory}/${project.build.finalName}</webappDirectory>
+          <archive>
+            <manifestEntries>
+              <Build-Date>${maven.build.timestamp}</Build-Date>
+              <Build-Number>${buildNumber}</Build-Number>
+              <Build-Jdk>${maven.version}</Build-Jdk>
+              <Build-By>${user.name}</Build-By>
+            </manifestEntries>
+          </archive>
+        </configuration>
         <executions>
           <execution>
-            <phase>package</phase>
-            <goals><goal>copy</goal></goals>
-            <configuration>
-              <artifactItems>
-                <artifactItem>
-                  <groupId>com.github.jsimone</groupId>
-                  <artifactId>webapp-runner</artifactId>
-                  <version>8.5.11.3</version>
-                  <destFileName>webapp-runner.jar</destFileName>
-                </artifactItem>
-              </artifactItems>
-            </configuration>
+            <id>copy</id>
+            <phase>install</phase>
+            <goals>
+              <goal>copy</goal>
+            </goals>
           </execution>
         </executions>
       </plugin>
     </plugins>
   </build>
+
 </project>
