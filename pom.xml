@@ -4,7 +4,7 @@
   <groupId>com.example</groupId>
   <artifactId>java-tomcat-sample</artifactId>
   <packaging>war</packaging>
-  <version>5.0.0</version>
+  <version>1.0.0</version>
   <name>hello Maven Webapp</name>
   <url>http://maven.apache.org</url>
 
@@ -28,7 +28,7 @@
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-dependency-plugin</artifactId>
-        <version>3.5.0</version>
+        <version>3.1.1</version>
         <executions>
           <execution>
             <id>copy</id>
