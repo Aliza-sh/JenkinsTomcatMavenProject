@@ -29,6 +29,19 @@
   <build>
     <finalName>${project.artifactId}</finalName>
 
+      <plugins>
+        <plugin>
+          <groupId>org.apache.tomcat.maven</groupId>
+          <artifactId>tomcat7-maven-plugin</artifactId>
+          <version>2.2</version> <!-- نسخه مورد نظر خود را وارد کنید -->
+          <configuration>
+            <url>http://localhost:8080/manager/text</url> <!-- اطلاعات مربوط به Tomcat Manager -->
+            <server>TomcatServer</server> <!-- نام Server مورد استفاده -->
+            <path>/your-webapp-context</path> <!-- مسیر کانتکست وب اپلیکیشن -->
+          </configuration>
+        </plugin>
+      </plugins>
+
     <plugins>
       <plugin>
         <artifactId>maven-compiler-plugin</artifactId>
