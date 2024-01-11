@@ -36,9 +36,7 @@
         <artifactId>tomcat7-maven-plugin</artifactId>
         <version>2.2</version> <!-- نسخه مورد نظر خود را وارد کنید -->
         <configuration>
-          <url>http://localhost:9090/manager/text</url> <!-- اطلاعات مربوط به Tomcat Manager -->
-          <server>TomcatServer</server> <!-- نام Server مورد استفاده -->
-          <path>/single-module-project</path> <!-- مسیر کانتکست وب اپلیکیشن -->
+          <url>http://localhost:9090/manager/text</url>
         </configuration>
       </plugin>
 
