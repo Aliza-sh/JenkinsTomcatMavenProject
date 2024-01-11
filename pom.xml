@@ -39,6 +39,7 @@
           <url>http://localhost:9090/manager/text</url>
           <server>TomcatServer</server>
           <path>/single-module-project</path>
+          <warFile>/var/lib/jenkins/workspace/Pipline_Tomcat_Maven_Project/target/single-module-project.war</warFile>
         </configuration>
       </plugin>
 
