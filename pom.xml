@@ -34,9 +34,11 @@
       <plugin>
         <groupId>org.apache.tomcat.maven</groupId>
         <artifactId>tomcat7-maven-plugin</artifactId>
-        <version>10.1.17</version> <!-- نسخه مورد نظر خود را وارد کنید -->
+        <version>2.2</version>
         <configuration>
-          <url>http://localhost:9090/manager/text</url>
+        <url>http://localhost:9090/manager/text</url>
+        <path>/your-webapp-context</path>
+        <warFile>/var/lib/jenkins/workspace/tomcat_pip_project/target/single-module-project.war</warFile>
         </configuration>
       </plugin>
 
