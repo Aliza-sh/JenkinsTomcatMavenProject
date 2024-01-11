@@ -34,11 +34,11 @@
       <plugin>
         <groupId>org.apache.tomcat.maven</groupId>
         <artifactId>tomcat7-maven-plugin</artifactId>
-        <version>2.2</version>
+        <version>2.4</version>
         <configuration>
           <url>http://localhost:9090/manager/text</url>
           <server>TomcatServer</server>
-          <path>/Pipline_Tomcat_Maven_Project</path>
+          <path>/webapp</path>
           <warFile>/var/lib/jenkins/workspace/Pipline_Tomcat_Maven_Project/target/single-module-project.war</warFile>
         </configuration>
       </plugin>
