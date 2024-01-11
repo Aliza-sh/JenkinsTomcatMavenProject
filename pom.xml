@@ -38,7 +38,7 @@
         <configuration>
           <url>http://localhost:9090/manager/text</url>
           <server>TomcatServer</server>
-          <path>/JenkinsTomcatMavenProject</path>
+          <path>/my-web-app</path>
         </configuration>
       </plugin>
 
