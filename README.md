@@ -1,6 +1,6 @@
 # java-tomcat-maven-example
 
-This is an example ready-to-deploy java web application built for Tomcat using Maven and webapp-runner.
+This is an example ready-to-deploy java web application built for Tomcat using Maven and appweb-runner.
 
 ## Running Locally
 
@@ -8,7 +8,7 @@ This is an example ready-to-deploy java web application built for Tomcat using M
 
 ```
 mvn package
-java -jar target/dependency/webapp-runner.jar target/*.war
+java -jar target/dependency/appweb-runner.jar target/*.war
 ```
 
 The application will be available on `http://localhost:8080`.
@@ -18,10 +18,10 @@ The application will be available on `http://localhost:8080`.
 1. Generate the project using a Maven archetype:
 
    ```
-   mvn archetype:generate -DarchetypeArtifactId=maven-archetype-webapp
+   mvn archetype:generate -DarchetypeArtifactId=maven-archetype-appweb
    ```
 
-2. Add the webapp-runner plugin into the `pom.xml`:
+2. Add the appweb-runner plugin into the `pom.xml`:
 
    ```
    <build>
@@ -40,9 +40,9 @@ The application will be available on `http://localhost:8080`.
                <artifactItems>
                  <artifactItem>
                    <groupId>com.github.jsimone</groupId>
-                   <artifactId>webapp-runner</artifactId>
+                   <artifactId>appweb-runner</artifactId>
                    <version>8.5.11.3</version>
-                   <destFileName>webapp-runner.jar</destFileName>
+                   <destFileName>appweb-runner.jar</destFileName>
                  </artifactItem>
                </artifactItems>
              </configuration>
