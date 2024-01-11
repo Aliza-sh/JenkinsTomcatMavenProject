@@ -36,7 +36,7 @@
         <artifactId>tomcat7-maven-plugin</artifactId>
         <version>2.2</version>
         <configuration>
-        <url>http://localhost:9090/manager/text</url>
+        <url>http://localhost:9090</url>
         <path>/your-webapp-context</path>
         <warFile>/var/lib/jenkins/workspace/tomcat_pip_project/target/single-module-project.war</warFile>
         </configuration>
